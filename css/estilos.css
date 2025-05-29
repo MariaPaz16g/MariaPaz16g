@@ -1,0 +1,210 @@
+/* --- Reset básico --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url('C:\Users\maria\Downloads\webx\img\IMG_20240106_165707.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  filter: none !important; /* Desactiva cualquier filtro */
+  background-color: transparent !important; /* Elimina color de fondo que pueda tapar */
+}
+
+/* --- Encabezados --- */
+h1, h2, h3 {
+  color: #7D9EC9;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #B29FD0;
+}
+
+/* --- Menú flotante --- */
+nav.menu-flotante {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  z-index: 1000;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+nav.menu-flotante ul {
+  list-style: none;
+  display: flex;
+  gap: 1.8rem;
+}
+
+nav.menu-flotante a {
+  text-decoration: none;
+  color: #24292e;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+nav.menu-flotante a:hover {
+  color: #005b99;
+  border-bottom: 2px solid #005b99;
+}
+
+/* --- Proyectos --- */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img, 
+.project-card video {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card .info {
+  padding: 15px;
+  text-align: center;
+}
+
+.project-card .info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.project-card .info p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* --- Modal --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.modal.active {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  max-width: 700px;
+  width: 90%;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Cerrar modal */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* Navegación del modal */
+.modal-nav {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-nav button {
+  background: #111;
+  color: #40679B;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.modal-nav button:hover {
+  background: #333;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
